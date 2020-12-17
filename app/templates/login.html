@@ -1,0 +1,31 @@
+{% extends "base.html "%}
+
+{% block content %}
+<link href="signin.css" rel="stylesheet">
+
+<div class="container col-lg-4 col-lg-offset-5">
+      <form class="form-signin" action="" method="post">
+          {{ form.hidden_tag() }}
+        <h2 class="form-signin-heading">Please sign in</h2>
+          <p>
+            {{ form.username.label }}<br>
+            {{ form.username(size=32) }}<br>
+            {% for error in form.username.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.password.label }}<br>
+            {{ form.password(size=32) }}<br>
+            {% for error in form.password.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
+        <p>{{ form.submit() }}</p>
+        <p>New User? <a href="{{ url_for('register') }}">Click to Register!</a></p>
+      </form>
+    </div> <!-- /container -->
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+{% endblock %}
