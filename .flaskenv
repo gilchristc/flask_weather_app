@@ -1,2 +1,1 @@
 FLASK_APP=flask_weather_app
-FLASK_DEBUG=1
