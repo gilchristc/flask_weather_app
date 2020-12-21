@@ -14,3 +14,9 @@ class Config(object):
     DB_NAME = 'weather_db'
     SQLALCHEMY_DATABASE_URI = os.environ.get('SQLALCHEMY_DATABASE_URI'
                                              ) or f'mysql://{DB_USER}:{DB_PASS}@{DB_HOST}/{DB_NAME}'
+    MAIL_SERVER = os.environ.get('MAIL_SERVER') or 'smtp.googllemail.com'
+    MAIL_PORT = int(os.environ.get('MAIL_PORT') or 587) or 587
+    MAIL_USE_TLS = os.environ.get('MAIL_USE_TLS') is not None
+    MAIL_USERNAME = os.environ.get('MAIL_USERNAME') or 'chesmere.21@gmail.com'
+    MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD') or 'B0y7ub0#_12'
+    ADMINS = ['chesmere.21@gmail.com']
